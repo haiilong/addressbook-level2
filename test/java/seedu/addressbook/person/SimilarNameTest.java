@@ -30,4 +30,11 @@ public class SimilarNameTest {
 		boolean result = name.isSimilar(testName);
 		assertEquals(result, false);
 	}
+	
+	@Test
+	public void isSimilar_isDifferentOrder_isTrue() throws IllegalValueException {
+		Name testName = new Name("xD Simpson John");
+		boolean result = name.isSimilar(testName);
+		assertEquals(result, true);
+	}
 }
