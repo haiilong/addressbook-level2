@@ -37,4 +37,11 @@ public class SimilarNameTest {
 		boolean result = name.isSimilar(testName);
 		assertEquals(result, true);
 	}
+	
+	@Test
+	public void isSimilar_isSubSet_isTrue() throws IllegalValueException {
+		Name testName = new Name("Simpson");
+		boolean result = name.isSimilar(testName);
+		assertEquals(result, true);
+	}
 }
