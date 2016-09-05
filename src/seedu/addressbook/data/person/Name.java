@@ -14,6 +14,7 @@ public class Name {
     public static final String EXAMPLE = "John Doe";
     public static final String MESSAGE_NAME_CONSTRAINTS = "Person names should be spaces or alphabetic characters";
     public static final String NAME_VALIDATION_REGEX = "[\\p{Alpha} ]+";
+    public static final String WHITE_SPACE = "\\s+";
 
     public final String fullName;
 
@@ -60,5 +61,24 @@ public class Name {
     public int hashCode() {
         return fullName.hashCode();
     }
+    
+    /**
+     * Returns true of the other name is very similar to this name.
+     * Two names are considered similar if they are in a different case 
+     * or they are in different order
+     * or they are subset of each other
+     */
+     public boolean isSimilar(Name other) { 
+    	 String[] thisNameParts = this.fullName.toLowerCase().split(WHITE_SPACE);
+    	 String[] otherNameParts = other.fullName.toLowerCase().split(WHITE_SPACE);
+    	 for (String t : thisNameParts) {
+    		 for (String o : otherNameParts) {
+    			 if (t.equals(o)) {
+    				 return true;
+    			 }
+    		 }
+    	 }
+    	 return false;
+     }
 
 }
