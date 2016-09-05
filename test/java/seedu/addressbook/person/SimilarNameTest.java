@@ -16,4 +16,11 @@ public class SimilarNameTest {
     public void initialize() throws IllegalValueException {
         name = new Name("JOHn sIMPson xD");
     }
+	
+	@Test
+	public void isSimilar_sameCase_isTrue() throws IllegalValueException {
+		Name testName = new Name("john simpson xd");
+		boolean result = name.isSimilar(testName);
+		assertEquals(result, true);
+	}
 }
