@@ -23,4 +23,11 @@ public class SimilarNameTest {
 		boolean result = name.isSimilar(testName);
 		assertEquals(result, true);
 	}
+	
+	@Test
+	public void isSimilar_null_showError() throws IllegalValueException {
+		Name testName = null;
+		boolean result = name.isSimilar(testName);
+		assertEquals(result, false);
+	}
 }

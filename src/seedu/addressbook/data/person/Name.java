@@ -69,6 +69,9 @@ public class Name {
      * or they are subset of each other
      */
      public boolean isSimilar(Name other) { 
+    	 if (other == null) {
+    		 return false;
+    	 }
     	 String[] thisNameParts = this.fullName.toLowerCase().split(WHITE_SPACE);
     	 String[] otherNameParts = other.fullName.toLowerCase().split(WHITE_SPACE);
     	 for (String t : thisNameParts) {
